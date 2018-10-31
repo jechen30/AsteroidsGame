@@ -1,10 +1,10 @@
-//your variable declarations here
+Spaceship tree= new Spaceship();//your variable declarations here
 public void setup() 
 {
-  //your code here
+  size(650,400);
+  background(255,213,0);
 }
 public void draw() 
 {
-  //your code here
+  tree.show();
 }
-
