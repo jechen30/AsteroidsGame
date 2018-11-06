@@ -31,11 +31,11 @@ public void keyPressed()
   }
   if (key=='w')
   {
-    tree.setDirectionY(-2);
+    tree.setDirectionY(-2);   
   }
   if (key=='s')
   {
-    tree.setDirectionY(2);
+    tree.setDirectionY(2);  
   }
   if (key==' ')
   {
@@ -43,5 +43,9 @@ public void keyPressed()
     tree.setY((int)(Math.random()*450));
     tree.setDirectionY(0);
     tree.setDirectionX(0);
+  }
+  if (key=='+')
+  {
+    tree.turn(30);
   }
 }
