@@ -1,12 +1,21 @@
-Spaceship tree= new Spaceship();//your variable declarations here
+Spaceship tree= new Spaceship();
+Star[] snow= new Star[250];
+
 public void setup() 
 {
   size(650,400);
- 
+  for (int i=0; i< snow.length;i++)
+  {
+    snow[i]=new Star();
+  }
 }
 public void draw() 
 {
-  background(255,213,0);
+  background(179,242,255);
+  for (int i=0; i< snow.length;i++)
+  {
+    snow[i].show();
+  }
   tree.show();
   tree.move();
 }
