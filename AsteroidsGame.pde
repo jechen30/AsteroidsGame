@@ -1,5 +1,6 @@
 Spaceship tree= new Spaceship();
 Star[] snow= new Star[250];
+Asteroid[] orn= new Asteroid[50];
 
 public void setup() 
 {
@@ -7,6 +8,10 @@ public void setup()
   for (int i=0; i< snow.length;i++)
   {
     snow[i]=new Star();
+  }
+  for (int i=0; i< orn.length;i++)
+  {
+    orn[i]=new Asteroid();
   }
 }
 public void draw() 
@@ -16,8 +21,13 @@ public void draw()
   {
     snow[i].show();
   }
+  for (int i=0; i< orn.length;i++)
+  {
+    orn[i].show();
+  }
   tree.show();
   tree.move();
+  
 }
 public void keyPressed()
 {
