@@ -4,9 +4,8 @@ class Asteroid extends Floater
   public Asteroid()
   {
     corners=9;
-    int[] xS= {15,15,0,-10,-20,-25,-30,-30,-10,-10,15};
-    int[] yS= {30,-10,-20,-30,-30,-25,-20,-10,10,30,30};
-
+    int[] xS= {-10,10,10,0,-10,-20,-25,-20,-10,-10};
+    int[] yS= {30,30,-10,-20,-25,-20,-10,0,10,30};
     xCorners = xS;
     yCorners=yS;
     myColor=color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));

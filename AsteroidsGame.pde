@@ -24,6 +24,7 @@ public void draw()
   for (int i=0; i< orn.length;i++)
   {
     orn[i].show();
+    orn[i].move();
   }
   tree.show();
   tree.move();
