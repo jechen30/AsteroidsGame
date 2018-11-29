@@ -1,6 +1,6 @@
 Spaceship tree= new Spaceship();
 Star[] snow= new Star[250];
-Asteroid[] orn= new Asteroid[50];
+Asteroid[] orn= new Asteroid[15];
 
 public void setup() 
 {
