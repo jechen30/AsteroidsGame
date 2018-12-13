@@ -1,7 +1,8 @@
 Spaceship tree= new Spaceship();
 Star[] snow= new Star[250];
-//Asteroid[] orn= new Asteroid[15];
 ArrayList <Asteroid> orn= new ArrayList <Asteroid>();
+ArrayList <Bullet> red= new ArrayList <Bullet>();
+//Bullet red = new Bullet(tree);
 
 public void setup() 
 {
@@ -10,10 +11,12 @@ public void setup()
   {
     snow[i]=new Star();
   }
-  for (int i=0; i< 20;i++)
+  for (int j=0; j< 20;j++)
   {
-    orn.add(new Asteroid());
+    orn.add( new Asteroid());
   }
+  for (int i=0; i< red.size();i++)
+    red.add(new Bullet(tree));
 }
 public void draw() 
 {
@@ -22,17 +25,32 @@ public void draw()
   {
     snow[i].show();
   }
-  for (int i=0; i< orn.size();i++)
+  for (int j=0; j< orn.size();j++)
   {
-    orn.get(i).show();
-    orn.get(i).move();
-    float d= dist(tree.getX(), tree.getY(),orn.get(i).getX(),orn.get(i).getY());
+    orn.get(j).show();
+    orn.get(j).move();
+    float d= dist(tree.getX(), tree.getY(),orn.get(j).getX(),orn.get(j).getY());
     if (d<30)
-      orn.remove(i);
+      orn.remove(j);
   }
-  tree.show();
-  tree.move();
-  
+  for (int i=0; i< red.size();i++)
+  {  
+    red.get(i).show();
+    red.get(i).move();
+  }
+    tree.show();
+    tree.move();
+    
+  for (int j=0; j< orn.size();j++){
+    for (int i=0; i< red.size();i++){
+    float d= dist(red.get(i).getX(),red.get(i).getY(),orn.get(j).getX(),orn.get(j).getY());
+    if (d<30){
+      red.remove(i);
+      orn.remove(j);
+      break;
+    }
+    }
+  } 
 }
 public void keyPressed()
 {
@@ -62,5 +80,9 @@ public void keyPressed()
   if (key=='+')
   {
     tree.turn(30);
+  }
+  if (key =='0')
+  {
+    red.add(new Bullet(tree));
   }
 }
